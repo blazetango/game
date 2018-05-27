@@ -1,0 +1,41 @@
+<!-- Sidebar -->
+<nav id="sidebar">
+  <%= render partial: 'form' %>
+  <div class="row" style="padding: 0px 21px;">
+    <div class="col-md-12">
+      <a class="btn btn-block disabled btn-secondary btn-sm txt-white" id="run">Run</a>
+    </div>
+  </div>
+
+  <div class="row" style="padding: 10px 21px;">
+    <div class="col-md-12 clear clear_btn">
+      <a class="btn btn-block btn-secondary btn-sm txt-white">Clear</a>
+    </div>
+  </div>
+
+  <div class="txt-white" style="padding: 0px 21px">
+    <b>Note:</b><br/>
+    <ul>
+      <li>Default value for row and cols are 20.</li>
+      <li>On Grid view if you do mouse hover the cells will be selected.</li>
+      <li>Max grid size is 100 X 100</li>
+    </ul>
+
+  </div>
+
+</nav>
+
+<!-- Page Content -->
+<div id="content">
+  <div class="clear">
+    <i class="fa fa-times fa-2x"></i>
+  </div>
+  <div class="game-wrapper box-<%= @box_size %>" style="max-width: <%= @max_width %>px">
+    <!--<div>Create grid : Rows <#%= text_field_tag%></div>-->
+    <div class="game">
+      <%= render partial: 'grid' %>
+    </div>
+
+  </div>
+
+</div>

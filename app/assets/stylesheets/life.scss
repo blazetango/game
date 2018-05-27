@@ -1,0 +1,262 @@
+// Place all the styles related to the life controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//colors
+$color_robins_egg_blue_approx: #00bcd4;
+$white: #fff;
+$color_chetwode_blue_approx: #7386d5;
+$color_alto_approx: #ddd;
+$color_tundora_approx: #444;
+$color_teal_approx: #006a77;
+$color_storm_dust_approx: #666;
+$color_outer_space_approx: #273845;
+$color_lochinvar_40_approx: rgba(47, 151, 121, 0.4);
+$color_lochinvar_10_approx: rgba(47, 151, 121, 0.1);
+$color_lochinvar_70_approx: rgba(47, 151, 121, 0.7);
+$color_baltic_sea_approx: #292c2f;
+$black_15: rgba(0, 0, 0, 0.15);
+$color_havelock_blue_approx: #5383d3;
+$color_danube_approx: #608bd2;
+
+//fonts
+$font_0: Roboto;
+$font_1: sans-seri;
+$font_2: Cookie;
+$font_3: Arial;
+$font_4: Helvetica;
+$font_5: sans-serif;
+
+//@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  font-family: $font_0, $font_1;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.wrapper {
+  display: flex;
+  align-items: stretch;
+}
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 100vh;
+  background: $color_robins_egg_blue_approx;
+}
+
+#content {
+  padding: 20px;
+  min-height: 100vh;
+  transition: all 0.3s;
+  width: 100%;
+  background: $color_alto_approx;
+}
+.container {
+  margin: 3em auto 0 auto;
+}
+.game-wrapper {
+  margin: 0 auto;
+  margin-bottom: 40px;
+  .game {
+    background: $color_alto_approx;
+    padding: 4px 5px 0;
+    margin: 20px 0;
+  }
+}
+.grid {
+  margin: 0 12px;
+}
+#form_grid {
+  padding: 20px;
+}
+.cell {
+  cursor: pointer;
+  background: $white;
+  height: 15px;
+  width: 15px;
+  margin-bottom: 3px;
+  color: $color_tundora_approx;
+  position: relative;
+  transition: all 0.3s ease;
+  float: left;
+  margin-right: 3px;
+  &:hover {
+    background: $color_teal_approx;
+  }
+  &.active{
+    background: $color_teal_approx;
+  }
+}
+
+.clear {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  color: $white;
+  cursor: pointer;
+  display: none;
+}
+.game-explanation {
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: justify;
+  position: relative;
+  animation: pop-in-big 700ms ease 2s both;
+  color: $color_storm_dust_approx;
+  margin-top: 30px;
+  height: 76px;
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: border-box;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 3px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.text-muted {
+  font-size: 1em;
+}
+
+.clear_btn{
+  position: relative;
+  top: 0;
+  right: 0;
+
+}
+
+.txt-white{
+  color: white !important;
+}
+
+@media only screen and(max-width: 400px) {
+  .btn {
+    font-size: 12px;
+    padding: 12px 18px 13px;
+  }
+  .text-muted {
+    font-size: 0.8em;
+  }
+}
+.header-basic {
+  background-color: $color_baltic_sea_approx;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 1px 2px 2px $black_15;
+  padding: 20px 40px;
+  height: 80px;
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: border-box;
+  .header-limiter {
+    max-width: 1200px;
+    text-align: center;
+    h1 {
+      float: left;
+      font: normal 28px $font_2, $font_3, $font_4, $font_5;
+      line-height: 40px;
+      margin: 0;
+      span {
+        color: $color_havelock_blue_approx;
+      }
+    }
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+    nav {
+      font: 16px $font_3, $font_4, $font_5;
+      line-height: 40px;
+      float: right;
+      a {
+        display: inline-block;
+        padding: 0 5px;
+        text-decoration: none;
+        color: $white;
+        font-size: 16px;
+        opacity: 0.9;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+@media all and(max-width: 600px) {
+  .header-basic {
+    padding: 20px 0;
+    height: 75px;
+    .header-limiter {
+      h1 {
+        float: none;
+        margin: -8px 0 10px;
+        text-align: center;
+        font-size: 24px;
+        line-height: 1;
+      }
+      nav {
+        line-height: 1;
+        float: none;
+        a {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+.row-no-padding [class*="col-"] {
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+}
+.box-40 {
+  .cell {
+    height: 40px;
+    width: 40px;
+  }
+}
+.box-35 {
+  .cell {
+    height: 35px;
+    width: 35px;
+  }
+}
+
+.box-30 {
+  .cell {
+    height: 30px;
+    width: 30px;
+  }
+}
+.box-25 {
+  .cell {
+    height: 25px;
+    width: 25px;
+  }
+}
+.box-20 {
+  .cell {
+    height: 20px;
+    width: 20px;
+  }
+}
+.box-15 {
+    .cell {
+      height: 14px;
+      width: 14px;
+    }
+}
+.box-10 {
+  .cell {
+    height: 10px;
+    width: 10px;
+  }
+}

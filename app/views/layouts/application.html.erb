@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GameOfLife</title>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <!-- Responsive meta -->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+    <!-- IE Compatibility meta -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Description meta -->
+    <meta content="Game of Life is a mathematical simulation where cells live or die based on certain rules." name="description"/>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="header-basic">
+
+      <div class="header-limiter">
+
+        <h1><a href="#">Game of Life</a></h1>
+
+      </div>
+
+    </header>
+    <div class="wrapper">
+      <%= yield %>
+    </div>
+  </body>
+</html>

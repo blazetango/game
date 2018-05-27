@@ -1,0 +1,10 @@
+$(".game-wrapper").removeClass (function (index, className) {
+    return (className.match (/(^|\s)box-\S+/g) || []).join(' ');
+});
+
+
+$(".game-wrapper").addClass("box-<%= @box_size %>").css("max-width", <%= @max_width %>);
+$('.grid').replaceWith('<%= escape_javascript(render(partial: "grid", locals: {})) %>');
+$("#form_grid").find("#rows").val(<%= @rows%>);
+$("#form_grid").find("#cols").val(<%= @cols%>);
+$('#run').text("Run");
